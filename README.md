@@ -1,4 +1,4 @@
-# Vibration activated trigger
+# Vibration activated trigger / LED
 
 We use a Piezoelectric element with an operational amplifier (low power amplifier, LM386) to detect small movements. Sensitivity is controlled with potentiometer RV1.
 
@@ -23,8 +23,12 @@ Mounting is supposed to be with 2x 3mm screw, 1x 2mm screw, 1x 1mm screw (just t
 
 Full PCB dimensions should be 43.18mm x 40.64mm.
 
+The piezoelectric element needs to be well secured to the vibrating thing, be it your boat engine, your plane or your car. It can very well be a piezoelectric speaker.
+
 ## Component: Trigger
 The high voltage generated when a piezoelectric crystal is exposed to mechanical load, is compared using LM386 low power amplifier (Voltage Comparator configuration), to an adjustable reference voltage up to VCC (+5v).
+
+I think I ended up with using the LM386 because it had more gain than a standard operational amplifier, but I cannot remember fully. The breadboard edition was tested a year ago.
 
 ![Trigger](./renders/comp1.png)
 
@@ -42,8 +46,7 @@ The load is a placeholder for your important equipment. In this example, Q3 turn
 See [xlsx](./BOM.xlsx) for an attempt at BOM.
 
 ## Reason
-I wanted to track small boats using battery power. The vibration from the outboard engine would activate the GPS tracker, and keep it running while the boat is moving, but turn off when it is standing still. There is a bit of power consumption when disabled, but much less than keeping the GPS running all the time.
-
+I wanted to track small boats without electric system, using battery power. The vibration from the outboard engine would activate the off-the-shelf GPS tracker, and keep it running while the boat is moving, but turn off when it is standing still. There is a bit of power consumption when disabled, but much less than keeping the GPS running all the time.
 
 ## Future work
 - Make this all with SMD components.
@@ -52,3 +55,4 @@ I wanted to track small boats using battery power. The vibration from the outboa
 - Find better connectors.
 - Choose more suitable components (trimpot, low power components, 3.3v etc).
 - Maybe do some calculations on power consumption.
+- Consider making the software for tracking, as well.
