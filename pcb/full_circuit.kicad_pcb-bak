@@ -1171,7 +1171,7 @@
   (gr_text "joakimsk 03.04.2021" (at -106.68 -1080.135 90) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (gr_text "Vibration activated LED" (at -144.78 -1082.675 90) (layer F.SilkS)
+  (gr_text "Vibration activated LED v1.0.0" (at -145.415 -1080.135 90) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (gr_line (start -146.05 -1099.82) (end -105.41 -1099.82) (layer Edge.Cuts) (width 0.1) (tstamp 6068C26B))

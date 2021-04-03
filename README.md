@@ -1,10 +1,12 @@
 # Vibration activated trigger
 
-We use a Piezoelectric element with an operational amplifier to detect small movements. Sensitivity is controlled with potentiometer RV1.
+We use a Piezoelectric element with an operational amplifier (low power amplifier, LM386) to detect small movements. Sensitivity is controlled with potentiometer RV1.
 
 A monostable 555-timer gets triggered, and can be continuously reset, to maintain stable output signal.
 
 The output signal is in this case, driving a LED, but could be used to activate external devices, for example, the purpose of which this was made, an off-the-shelf GPS tracker.
+
+Power supply should probably be 5v regulated... So consider using LM7805 or alternatives. I think a USB power supply connected to a 12v unregulated lead battery should be ok, 5-5.4 volts.
 
 ![PCB as rendered](./renders/full_circuit.png)
 
@@ -14,8 +16,15 @@ Circuit consists of three components, which I try to explain here.
 
 Latest revision 1.0.0 (first complete prototype).
 
+## Mounting and physical information
+Top plane is VCC (+5v), bottom plane is GND.
+
+Mounting is supposed to be with 2x 3mm screw, 1x 2mm screw, 1x 1mm screw (just to test hole sizes).
+
+Full PCB dimensions should be 43.18mm x 40.64mm.
+
 ## Component: Trigger
-The high voltage generated when a piezoelectric crystal is exposed to mechanical load, is compared using LM386 operational amplifier (Voltage Comparator configuration), to an adjustable reference voltage up to VCC (+5v).
+The high voltage generated when a piezoelectric crystal is exposed to mechanical load, is compared using LM386 low power amplifier (Voltage Comparator configuration), to an adjustable reference voltage up to VCC (+5v).
 
 ![Trigger](./renders/comp1.png)
 
@@ -29,8 +38,12 @@ The load is a placeholder for your important equipment. In this example, Q3 turn
 
 ![Load](./renders/comp3.png)
 
+## BOM
+See [xlsx](./BOM.xlsx) for an attempt at BOM.
+
 ## Reason
 I wanted to track small boats using battery power. The vibration from the outboard engine would activate the GPS tracker, and keep it running while the boat is moving, but turn off when it is standing still. There is a bit of power consumption when disabled, but much less than keeping the GPS running all the time.
+
 
 ## Future work
 - Make this all with SMD components.
