@@ -21,10 +21,12 @@ The high voltage generated when a piezoelectric crystal is exposed to mechanical
 
 ## Component: Monostable 555
 The trigger signal from last component is used to reset a monostable 555 timer. It should toggle output high and take roughly 30 seconds due to size of R6 and C2 before output is low. It is resettable, by activating Q2, which drains C2 when triggered. This means the output signal will be stable, and can be kept high under prolonged vibrations.
+
 ![Monostable 555](./renders/comp2.png)
 
 ## Component: Load
 The load is a placeholder for your important equipment. In this example, Q3 turns on LED D1 when input signal is high. Feel free to replace this component with whatever you want to turn on. This is supposed to turn on power to an off-the-shelf GPS tracker.
+
 ![Load](./renders/comp3.png)
 
 ## Reason
